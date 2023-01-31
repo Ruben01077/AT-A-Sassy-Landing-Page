@@ -1,3 +1,6 @@
+@import "config";
+@import "btnConfig";
+@import "utilities";
 
 * {
   box-sizing: border-box;
@@ -20,24 +23,84 @@ a {
 }
 
 .hero {
-  // This is where the bulk of the SCSS styling needs to be done
 
-  // Take a look at the other files we've built already. How can they be useful here?
+  background-color: $primary-color;
+  color: $white_font_color;
 
-  // Also, take time to review the features of SCSS we've already covered:
-  // 1. $variables
-  // 2. nesting (dont forget about the ampersand (&) parent selector!)
-  // 3. At-Rules
+  .box {
+
+    .navBar {
+
+      .unList li a {
+
+        &:hover {
+          color: $light-color;
+
+        }
+
+        color: $white_font_color;
+
+      }
+
+      .unList li {
+        display: inline-flex;
+        padding: 5px;
+        margin-left: 40px;
+
+      }
+
+      color: $white_font_color;
+      display: inline-flex;
+
+    }
+
+
+    .hero-content {
+
+
+
+      .contentDiv {
+
+        h1 {
+          width: 430px;
+        }
+
+        align-self: center;
+        width: 500px
+      }
+
+      .imgDiv {
+        width: 510px;
+
+        .img {
+          width: 100%
+        }
+
+      }
+
+      display: inline-flex;
+
+    }
+
+  }
+
 }
 
 // This code is related to some of the aspects of SCSS we have yet to cover.
 // While you don't have to mess with it, it would be advisable to attempt to understand its functionality.
-$spaceamounts: (1,2,3,4,5);
+$spaceamounts: (
+  1,
+  2,
+  3,
+  4,
+  5
+);
 
 @each $space in $spaceamounts {
   .m-#{$space} {
     margin: #{$space}rem;
   }
+
   .my-#{$space} {
     margin: #{$space}rem 0;
   }
@@ -45,6 +108,7 @@ $spaceamounts: (1,2,3,4,5);
   .p-#{$space} {
     padding: #{$space}rem;
   }
+
   .py-#{$space} {
     padding: #{$space}rem 0;
   }
